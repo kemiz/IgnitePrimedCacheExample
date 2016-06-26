@@ -23,7 +23,7 @@ public class CacheStoreExample {
      */
     public static void main(String[] args) throws IgniteException {
         // Start Ignite node.
-        Ignite ignite = Ignition.start("/Users/kemi/Documents/dev/CacheStoreExample/config/cachestore-config.xml");
+        Ignite ignite = Ignition.start(args[0]);
         IgniteCache<Integer, String> cache = ignite.cache(CACHE_NAME);
 
         // Individual puts and gets.
