@@ -6,7 +6,7 @@
 
     <groupId>com.gridgain.examples</groupId>
     <artifactId>CacheStoreExample</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <!--
       Licensed to the Apache Software Foundation (ASF) under one or more

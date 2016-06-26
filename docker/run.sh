@@ -47,4 +47,4 @@ if [ "$IGNITE_QUIET" == "false" ]; then
 	QUIET="-v"
 fi
 
-java -classpath "/opt/gridgain/CacheStoreExample/target/CacheStoreExample-1.0-SNAPSHOT.jar:/opt/gridgain/gridgain-enterprise-fabric-7.5.11/libs/*:/opt/gridgain/gridgain-enterprise-fabric-7.5.11/libs/ignite-spring/*" com.gridgain.examples.cachestore.CacheStoreExample /opt/gridgain/CacheStoreExample/config/cachestore-config.xml
+java -classpath "/opt/gridgain/IgnitePrimedCacheExample-master/target/CacheStoreExample-1.0.jar:/opt/gridgain/gridgain-enterprise-fabric-7.5.11/libs/*:/opt/gridgain/gridgain-enterprise-fabric-7.5.11/libs/ignite-spring/*" com.gridgain.examples.cachestore.CacheStoreExample /opt/gridgain/IgnitePrimedCacheExample-master/config/cachestore-config.xml

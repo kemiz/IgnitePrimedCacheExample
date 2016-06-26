@@ -23,6 +23,8 @@ ENV GRIDGAIN_VERSION 7.5.11
 
 WORKDIR /opt/gridgain
 
+#http://gridgain.com/media/
+
 ADD ./gridgain-enterprise-fabric-$GRIDGAIN_VERSION.zip /opt/gridgain/gridgain-enterprise.zip
 
 # Ignite home
@@ -32,23 +34,27 @@ RUN unzip gridgain-enterprise.zip
 
 RUN rm gridgain-enterprise.zip
 
-ADD ./CacheStoreExample.zip CacheStoreExample.zip
+ADD https://github.com/kemiz/IgnitePrimedCacheExample/archive/master.zip IgnitePrimedCacheExample-master.zip
 
-RUN unzip CacheStoreExample.zip
+RUN unzip IgnitePrimedCacheExample-master.zip
 
-ADD ./0_0.zip 0_0.zip
+RUN rm IgnitePrimedCacheExample-master.zip
+
+ADD ./data.zip 0_0.zip
 
 RUN unzip 0_0.zip
 
-RUN mkdir -p /opt/gridgain/default/0_0_0_0_0_0_0_1_1_127_0_0_1_172_17_0_1_172_18_0_1_192_168_65_2_47500/CacheStoreExample/
+RUN rm 0_0.zip
 
-RUN cp 0_0 /opt/gridgain/default/0_0_0_0_0_0_0_1_1_127_0_0_1_172_17_0_1_172_18_0_1_192_168_65_2_47500/CacheStoreExample/
+RUN mkdir -p /opt/gridgain/default/0_0_0_0_0_0_0_1_1_127_0_0_1_172_17_0_1_172_18_0_1_192_168_65_2_47500/IgnitePrimedCacheExample-master/
+
+RUN cp 0_0 /opt/gridgain/default/0_0_0_0_0_0_0_1_1_127_0_0_1_172_17_0_1_172_18_0_1_192_168_65_2_47500/IgnitePrimedCacheExample-master/
 
 RUN apt-get update
 
 RUN apt-get install -y maven
 
-RUN mvn -f CacheStoreExample/pom.xml package
+RUN mvn -f IgnitePrimedCacheExample-master/pom.xml package
 
 # Copy sh files and set permission
 ADD ./run.sh $IGNITE_HOME/
