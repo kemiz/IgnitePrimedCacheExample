@@ -46,8 +46,8 @@ public class CacheStoreExample {
         final int keyCnt = 20;
 
         // Store keys in cache.
-        for (int i = 0; i < keyCnt; i++)
-            cache.put(i, Integer.toString(i));
+//        for (int i = 0; i < keyCnt; i++)
+//            cache.put(i, Integer.toString(i));
 
         System.out.println(">>> Stored values in cache.");
 
@@ -73,7 +73,7 @@ public class CacheStoreExample {
             batch.put(i, "bulk-" + Integer.toString(i));
 
         // Bulk-store entries in cache.
-        cache.putAll(batch);
+//        cache.putAll(batch);
 
         System.out.println(">>> Bulk-stored values in cache.");
 
