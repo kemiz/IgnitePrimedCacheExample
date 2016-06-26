@@ -16,7 +16,6 @@ A simple example that demonstrates building a docker image that contains a prime
 
 1. Build the docker image:
     - Navigate to the `docker` directory in the project
-    - Execute: `sudo docker build . -t cache-store-example`
-    - This will build the necessary docker image
+    - `sudo docker build . -t cache-store-example`
 2. Run the image:
     - `sudo docker run -it --net=host cache-store-example`
