@@ -67,7 +67,7 @@
                             <map>
                                 <entry key="writeMode" value="SYNC_BUFFERED"/>
                                 <entry key="writeDelay" value="1000"/>
-                                <entry key="rootPath" value="/Users/kemi/store"/>
+                                <entry key="rootPath" value="/opt/gridgain"/>
                             </map>
                         </property>
                     </bean>
